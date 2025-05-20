@@ -1,0 +1,24 @@
+---
+// Navbar.astro
+import NavbarElement from './NavbarElement.astro';
+
+const links = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#habilidades", label: "Habilidades" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#educacion", label: "Educación" },
+  { href: "#sobre-mi", label: "Sobre Mi" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<nav class="bg-black text-white py-4 px-6 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="text-3xl font-bold text-white-500">Portafolio</div>
+    <ul class="flex gap-6">
+      {links.map(link => (
+        <NavbarElement {...link} />
+      ))}
+    </ul>
+  </div>
+</nav>
